@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HNA</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="/css/font-awesome.min.css" rel="stylesheet" />
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/skel-panels.min.js"></script>
+		<script src="/js/init.js"></script>
+		<script charset="utf-8" src="/editor/kindeditor-min.js"></script>
+		<script charset="utf-8" src="/editor/lang/zh_CN.js"></script>
+		<link rel="stylesheet" href="/css/skel-noscript.css" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/style-desktop.css" />
+		<link rel="stylesheet" href="/css/style-wide.css" />
+		<link rel="stylesheet" href="/css/amazeui.min.css" />
+		<script>
+		var editor;
+		KindEditor.ready(function(K) {
+		  editor = K.create('textarea', {
+		  allowImageUpload : false,
+		  items : [
+		    'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic',
+		    'underline', 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright',
+		    'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+		  });
+		});
+		</script>
+		<script>
+			$(function(){
+				$('body').find('.tips').hide(0);
+			})
+		</script>
+	</head>
+	<body class="left-sidebar">
+		<!-- Wrapper -->
+			<div id="wrapper">
+			<% if (success) { %>
+			  <div class="tips"><%=success %></div>
+			<% } %>
+			<% if (error) { %>
+			  <div class="tips"><%=error %> </div>
+			<% } %>

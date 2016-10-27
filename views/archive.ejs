@@ -1,0 +1,19 @@
+<%- include header %>
+<div id="content">
+	<div id="content-inner">				
+			<article class="is-post is-post-excerpt">
+					<ul class="archive">
+					<% var lastYear = 0 %>
+					<% posts.forEach(function (post, index) { %>
+					  <% if (lastYear != post.time.year) { %>
+					    <li><h3><%= post.time.year %></h3></li>
+					  <% lastYear=post.time.year } %>
+					  <li class="archive_time"><time><%= post.time.day %></time></li>
+					  <li class="archive_main"><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></li>
+					<% }) %>
+				</ul>
+		</article>
+	</div>
+</div>
+<%- include footer %>
+

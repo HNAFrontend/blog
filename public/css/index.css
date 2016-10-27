@@ -1,0 +1,17 @@
+body,html{line-height: 1.6;margin:0px; padding:0px;font-size:14px;font-family:"微软雅黑",Helvetica, Heiti SC, "LiHei Pro Medium", LiHei Pro Medium, sans-self; color:#000;background: #ebebeb;}
+body {position: absolute; margin:0; padding:0;width:100%; height:100%; background: #fff;}
+.title{position: absolute;bottom:50%;width:100%}
+.TeamName{text-align: center;font-size: 1.2em;font-weight: 300;height: 0.9em;}
+.ChooseType li{list-style: none;float: left;width: 22%;text-align: center;}
+.ChooseType li a{text-decoration:none;color: #696969}
+@media screen and (min-width:750px){
+	.ChooseType{width: 23%;position: relative; margin: 0 auto;}
+	.TeamName{text-align: center;font-size: 2em;}
+	.ChooseType li {list-style: none;float: left;width: 22%;text-align: center;}
+}
+@media screen and (max-width:375px){
+	.ChooseType{width: 88%;position: relative; margin: 0 auto;}
+}
+.ChooseType li a:hover{border-bottom: 1px solid #000}
+.SmallTitle{text-align: center;padding-top: 0%;font-weight: 300;}
+canvas {display:block}

@@ -1,0 +1,16 @@
+<%- include header %>
+<form method="post" id="postFrom">
+  <fieldset>
+    <legend>编辑</legend>
+  标题：<br />
+  <input type="text" name="title" value="<%= post.title %>" /><br />
+  标签：<br />
+  <input style="width: 30%;" type="text" name="tag1" value="<%= post.tags[0] %>"  />
+  <input style="width:30%;margin-left:3%;" type="text" name="tag2" value="<%= post.tags[1] %>" />
+  <input style="width:30%;margin-left:5.2%;" type="text" name="tag3" value="<%= post.tags[2] %>" /><br />
+  正文：<br />
+  <textarea name="post" rows="15" cols="100"><%= post.post %></textarea><br />
+  <input type="submit"  class="am-btn am-btn-success"  value="保存修改" />
+    </fieldset>
+</form>
+<%- include footer %>

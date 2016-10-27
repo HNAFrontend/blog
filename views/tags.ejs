@@ -1,0 +1,18 @@
+<%- include header %>
+<div class="tags">
+<div class="am-panel am-panel-default">
+  <div class="am-panel-hd">
+    <h3 class="am-panel-title">分类&标签</h3>
+  </div>
+  <ul class="am-list am-list-static">
+  <% posts.forEach(function (tag, index) { %>
+    <li>
+    <a class="tag" href="/tags/<%= tag %>"><%= tag %></a>
+    </li>
+	<% }) %>
+  </ul>
+</div>
+</div>
+<%- include footer %>
+
+

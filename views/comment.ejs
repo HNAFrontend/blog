@@ -1,0 +1,31 @@
+<br />
+<% post.comments.forEach(function (comment, index) { %>
+ <article class="am-comment"> <!-- 评论容器 -->
+  <a href="<%= comment.website %>">
+    <img src="<%= comment.head %>" class="am-comment-avatar" alt=""/> <!-- 评论者头像 -->
+  </a>
+  <div class="am-comment-main"> <!-- 评论内容容器 -->
+    <header class="am-comment-hd">
+      <div class="am-comment-meta"> <!-- 评论元数据 -->
+        <a href="#link-to-user" class="am-comment-author"><%= comment.name %></a> <!-- 评论者 -->
+        评论于 <time datetime=""><%= comment.time %></time>
+      </div>
+    </header>
+    <div class="am-comment-bd"><%- comment.content %></div> <!-- 评论内容 -->
+  </div>
+</article>
+<% }) %>
+
+<form method="post" style="float:left;width:50%;margin-left:6%;margin-bottom:10%;" action="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">
+<% if (user) { %>
+  姓名：<input type="text" name="name" value="<%= user.name %>" /><br />
+  邮箱：<input type="text" name="email" value="<%= user.email %>" /><br />
+  网址：<input style="margin-bottom: 4%;" type="text" name="website" value="/u/<%= user.name %>" /><br />
+<% } else { %>
+  姓名：<input type="text" name="name" /><br />
+  邮箱：<input type="text" name="email" /><br />
+  网址：<input style="margin-bottom: 4%;" type="text" name="website" value="http://" /><br />
+<% } %>
+  <textarea name="content" rows="5" cols="80"></textarea><br />
+  <input type="submit" class="am-btn am-btn-danger am-round" value="留言" />
+</form>
